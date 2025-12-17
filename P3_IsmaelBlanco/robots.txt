@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /pages/admin-area
+Disallow: /pages/admin-access
+Disallow: /pages/addcch
+Disallow: /pages/chgcch
+Disallow: /pages/edtcch
+Disallow: /pages/edtinf
+Disallow: /pages/error

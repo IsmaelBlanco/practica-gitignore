@@ -1,0 +1,244 @@
+#foto { grid-area: foto; }
+#marca { grid-area: marca; }
+#modelo { grid-area: modelo; }
+#version { grid-area: version; }
+#kms { grid-area: kms; }
+#anio { grid-area: anio; }
+#combustible { grid-area: combustible; }
+#caballos { grid-area: caballos; }
+#carroceria { grid-area: carroceria; }
+#traccion { grid-area: traccion; }
+#color { grid-area: color; }
+#consumo { grid-area: consumo; }
+#precio_ventadiv { grid-area: precio_ventadiv; }
+#precio_compradiv { grid-area: precio_compradiv; }
+#precio_inversiondiv { grid-area: precio_inversiondiv; }
+#gananciadiv { grid-area: gananciadiv; }
+
+body{
+  height:100vh;
+}
+
+main {
+  background-image: url("../src/bckgrnd1.png");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  background-position: center;
+  display: flex;
+  height:100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario {
+  width: 80%;
+  color:rgb(210,210,210);
+  height: 80%;
+  background-color: rgba(106, 106, 106, 0.39);
+  border-radius: 8px;
+  border: 2px inset rgba(255, 255, 255, 0.32);
+  padding: 20px;
+
+  form {
+    width: 100%;
+    height: 70vh;
+    display: grid;
+    grid-template-areas:
+      "foto foto foto marca modelo version kms anio"
+      "foto foto foto combustible caballos carroceria traccion color"
+      "foto foto foto consumo precio_ventadiv precio_compradiv precio_inversiondiv gananciadiv";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+
+    .campo {
+      display: flex;
+      flex-direction: column;
+      align-items:center;
+      justify-content:center;
+    }
+
+    #foto {
+      grid-area: foto;
+      align-self:start !important;
+      label{
+        margin-top:33px;
+      }
+      input[type="file"] {
+        margin-top: 5px;
+      }
+
+      #vistaFoto {
+        width: 100%;
+        aspect-ratio:1/1;
+        object-fit: cover;
+        margin-top: 10px;
+      }
+    }
+
+    #marca { grid-area: marca; }
+    #modelo { grid-area: modelo; }
+    #version { grid-area: version; }
+    #kms { grid-area: kms; }
+    #anio { grid-area: anio; }
+    #combustible { grid-area: combustible; }
+    #caballos { grid-area: caballos; }
+    #carroceria { grid-area: carroceria; }
+    #traccion { grid-area: traccion; }
+    #consumo { grid-area: consumo; }
+    #precio_venta { grid-area: precio_venta; }
+    #precio_compra { grid-area: precio_compra; }
+    #precio_inversion { grid-area: precio_inversion; }
+    #ganancia { grid-area: ganancia; }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.color-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.color-circle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.color-circle input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* El círculo de color */
+.color-circle span {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* Colores de los círculos */
+.color-circle.blanco span {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.color-circle.gris span {
+  background-color: #888;
+}
+
+.color-circle.negro span {
+  background-color: #000;
+}
+
+.color-circle.rojo span {
+  background-color: #e00;
+}
+
+.color-circle.amarillo span {
+  background-color: #ff0;
+}
+
+.color-circle.verde span {
+  background-color: #0a0;
+}
+
+.color-circle.azul span {
+  background-color: #00f;
+}
+
+.color-circle.naranja span {
+  background-color: #f60;
+}
+
+.color-circle.rosa span {
+  background-color: #f69;
+}
+
+/* Cuando está seleccionado, el borde cambia de color */
+.color-circle input[type="radio"]:checked + span {
+  border-color: #fff;
+  box-shadow: 0 0 5px 2px rgba(255,255,255,0.8);
+}
+
+.drop-area {
+  border: 2px dashed #aaa;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.sortable-images {
+  display: grid;
+  grid-template-rows:1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sortable-images img {
+  width: 80px;
+  height: 80px;
+  margin:5px;
+  object-fit: cover;
+  cursor: move;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+@keyframes primera{
+  0%,100%{
+    box-shadow: 0px 0px 5px rgb(155,191,26);
+  }
+  50%{
+    box-shadow: 0px 0px 20px rgb(155,191,26);
+  }
+}
+
+img.primera {
+  animation:primera 2s ease-in-out infinite;
+  border: 1px solid rgb(155, 191, 26);
+}
+
+@keyframes ultima{
+  0%,100%{
+    box-shadow: 0px 0px 5px rgb(235, 36, 10);
+  }
+  50%{
+    box-shadow: 0px 0px 20px rgb(235, 36, 10);
+  }
+}
+
+img.ultima {
+  animation:ultima 2s ease-in-out infinite;
+  border: 1px solid rgb(235, 36, 10); 
+}

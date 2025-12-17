@@ -1,0 +1,75 @@
+body {
+    background-image: url("../src/bckgrnd1.png");
+    background-size: cover;
+    background-size:100% 100%;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.loginCard {
+    width: 30%;
+    background-color: rgba(140, 140, 140, 0.49);
+    border: 1px solid white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+.loginCard h1 {
+    margin-bottom: 1rem;
+}
+
+.loginCard h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+form div {
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+form div input {
+    width: 80%;
+    padding: 0.4rem;
+    margin-top: 0.5rem;
+}
+
+form button,
+.volver-btn {
+    background-color: #222;
+    color: rgb(225, 225, 225);
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+    text-align: center;
+    display: inline-block;
+}
+
+form button:hover,
+.volver-btn:hover {
+    background-color: #333;
+}
